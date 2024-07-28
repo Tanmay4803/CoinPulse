@@ -43,6 +43,8 @@ This project is a Django-based web application designed to manage and send alert
 
 The server will be running on `localhost` at port `8000`.
 
+![Running Successfully](images/server.png)
+
 ## API Endpoints
 
 ### Create an Alert
@@ -58,7 +60,7 @@ The server will be running on `localhost` at port `8000`.
     }
     ```
 
-![Output Message after adding the Alert](images/screenshot.png)
+![Creating the Alert](images/create.png)
 
 ### Read All Alerts
 - **URL:** `localhost:8000/alerts/readall/`
@@ -80,13 +82,13 @@ The server will be running on `localhost` at port `8000`.
         "target": "68000"
     }
     ```
-![Output Message after updating an Alert](images/screenshot.png)
+![Updating an Alert](images/update.png)
 
 ### Delete an Alert
 - **URL:** `localhost:8000/alerts/delete/<str:pk>`
 - **Method:** DELETE
 
-![Output Message after deleting the Alert](images/screenshot.png)
+![Deleting the Alert](images/delete.png)
 
 ## Database Configuration
 
@@ -97,7 +99,13 @@ The application uses PostgreSQL as its database. The configuration details are:
 - **Password:** `postgres`
 - **Database:** `postgres`
 
+![TablePlus PostgreSQL Connection Page](images/postgresql.png)
+
 You can connect to the database using TablePlus or any other database client with the above details.
+
+## PostgreSQL Database 
+
+![Database shown in TablePlus](images/database.png)
 
 ## Running the Alert Trigger Script
 
@@ -114,10 +122,7 @@ There is a Python script located at `management/commands/bitcoin.py` that can be
 
 The output of the script execution can be observed in the VS Code terminal. A screenshot of the output is attached for reference.
 
-![Trigger Alert Message](images/screenshot.png)
+![Trigger Alert Message](images/trigger.png)
 
-## Database 
-
-![Database shown in TablePlus](images/screenshot.png)
 
 
