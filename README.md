@@ -1,19 +1,19 @@
 # Bitcoin-Alert-Application
 
 ## Introduction
-This project is a Django-based web application designed to manage and send alerts. The solution includes endpoints for creating, reading, updating, and deleting alerts, and uses Docker for containerization.
+This project is a Django-based web application designed to manage and send alerts when Bitcoin price target is achieved or is decreased to the lower limit. The solution includes endpoints for creating, reading, updating, and deleting alerts, and uses Docker for containerization.
 
 ## Prerequisites
 - Docker
-- Docker Compose
 - Postman (for testing the API endpoints)
+- TablePlus (for testing the PostgreSQL database)
 
 ## Steps to Run the Project
 
 1. **Clone the Repository**
     ```sh
-    git clone <repository-url>
-    cd <repository-folder>
+    git clone https://github.com/Tanmay4803/Bitcoin-Alert-Application.git
+    cd Bitcoin-Alert-Application
     ```
 
 2. **Navigate to the Project Directory**
@@ -58,6 +58,8 @@ The server will be running on `localhost` at port `8000`.
     }
     ```
 
+![Output Message after adding the Alert](images/screenshot.png)
+
 ### Read All Alerts
 - **URL:** `localhost:8000/alerts/readall/`
 - **Method:** GET
@@ -78,10 +80,13 @@ The server will be running on `localhost` at port `8000`.
         "target": "68000"
     }
     ```
+![Output Message after updating an Alert](images/screenshot.png)
 
 ### Delete an Alert
 - **URL:** `localhost:8000/alerts/delete/<str:pk>`
 - **Method:** DELETE
+
+![Output Message after deleting the Alert](images/screenshot.png)
 
 ## Database Configuration
 
@@ -109,13 +114,10 @@ There is a Python script located at `management/commands/bitcoin.py` that can be
 
 The output of the script execution can be observed in the VS Code terminal. A screenshot of the output is attached for reference.
 
-## Example Dataset
+![Trigger Alert Message](images/screenshot.png)
 
-When you provide a dataset for creating an alert, its JSON format should be as follows:
-```json
-{
-    "name": "tanmay saxena",
-    "email": "tanmay4803@gmail.com",
-    "current": "68000",
-    "target": "67000"
-}
+## Database 
+
+![Database shown in TablePlus](images/screenshot.png)
+
+
