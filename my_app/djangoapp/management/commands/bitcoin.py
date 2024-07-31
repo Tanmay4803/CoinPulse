@@ -5,6 +5,11 @@ from asgiref.sync import sync_to_async
 from django.core.management.base import BaseCommand
 from djangoapp.models import Alert 
 
+from django.http import HttpResponse
+from djangoapp.tasks import send_email
+
+send_to = 'tanmay4803@gmail.com'
+
 ws_endpoint = "wss://stream.binance.com:9443/ws/btcusdt@ticker"
 
 async def handle_messages():
@@ -16,11 +21,13 @@ async def handle_messages():
             for alert in alerts:
                 if alert.current<alert.target:
                     if current_price <= float(alert.target):
-                        print(f"Alert Triggered for {alert.name} at {current_price} with mail id {alert.email}")
+                        send_email(send_to)
+                        print(f"Alert Triggered for {alert.name} at {current_price} for mail id {alert.email}")
                         return  
                 else:
                     if current_price >= float(alert.target):
-                        print(f"Alert Triggered for {alert.name} at {current_price} with mail id {alert.email}")
+                        send_email(send_to)
+                        print(f"Alert Triggered for {alert.name} at {current_price} for mail id {alert.email}")
                         return
 
 class Command(BaseCommand):
