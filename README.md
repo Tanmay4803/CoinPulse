@@ -1,7 +1,49 @@
+
 # Bitcoin-Alert-Application
 
 ## Introduction
 This project is a Django-based web application designed to manage and send alerts when Bitcoin price target is achieved or is decreased to the lower limit. The solution includes endpoints for creating, reading, updating, and deleting alerts, and uses Docker for containerization.
+
+## Project Structure and Architecture
+The project follows a typical Django application structure with some additional files for Docker configuration:
+
+## Bitcoin-Alert-Application/
+│
+├── my_app/
+│   ├── manage.py
+│   ├── my_app/
+│   │   ├── __init__.py
+│   │   ├── asgi.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   ├── alerts/
+│   │   ├── migrations/
+│   │   ├── __init__.py
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── models.py
+│   │   ├── serializers.py
+│   │   ├── tests.py
+│   │   └── views.py
+│   └── management/
+│       └── commands/
+│           └── bitcoin.py
+│
+├── Dockerfile
+├── docker-compose.yml
+└── requirements.txt
+
+### Key Components:
+- **Django Project (`my_app`)**: Contains the main Django configuration files.
+- **Alerts App**: Handles the core functionality of creating and managing alerts.
+- **Management Commands**: Contains custom Django management commands, including the Bitcoin alert trigger script.
+- **Docker Configuration**: Includes `Dockerfile` and `docker-compose.yml` for containerization.
+
+### Architecture:
+- The application follows a microservices architecture, with the Django app and PostgreSQL database running in separate containers.
+- RESTful API endpoints are implemented using Django Rest Framework.
+- The alert trigger script runs as a separate process, periodically checking Bitcoin prices and sending alerts when conditions are met.
 
 ## Prerequisites
 - Docker
