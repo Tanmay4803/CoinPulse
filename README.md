@@ -7,32 +7,32 @@ This project is a Django-based web application designed to manage and send alert
 ## Project Structure and Architecture
 The project follows a typical Django application structure with some additional files for Docker configuration:
 
-## Bitcoin-Alert-Application/
-│
-├── my_app/
-│   ├── manage.py
-│   ├── my_app/
-│   │   ├── __init__.py
-│   │   ├── asgi.py
-│   │   ├── settings.py
-│   │   ├── urls.py
-│   │   └── wsgi.py
-│   ├── alerts/
-│   │   ├── migrations/
-│   │   ├── __init__.py
-│   │   ├── admin.py
-│   │   ├── apps.py
-│   │   ├── models.py
-│   │   ├── serializers.py
-│   │   ├── tests.py
-│   │   └── views.py
-│   └── management/
-│       └── commands/
-│           └── bitcoin.py
-│
-├── Dockerfile
-├── docker-compose.yml
-└── requirements.txt
+- Bitcoin-Alert-Application
+- │
+- ├── my_app/
+- │   ├── manage.py
+- │   ├── my_app/
+- │   │   ├── __init__.py
+- │   │   ├── asgi.py
+- │   │   ├── settings.py
+- │   │   ├── urls.py
+- │   │   └── wsgi.py
+- │   ├── alerts/
+- │   │   ├── migrations/
+- │   │   ├── __init__.py
+- │   │   ├── admin.py
+- │   │   ├── apps.py
+- │   │   ├── models.py
+- │   │   ├── serializers.py
+- │   │   ├── tests.py
+- │   │   └── views.py
+- │   └── management/
+- │       └── commands/
+- │           └── bitcoin.py
+- │
+- ├── Dockerfile
+- ├── docker-compose.yml
+- └── requirements.txt
 
 ### Key Components:
 - **Django Project (`my_app`)**: Contains the main Django configuration files.
